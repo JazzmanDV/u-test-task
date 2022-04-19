@@ -5,17 +5,14 @@ import styles from "./GeneralPostForm.module.css";
 
 const GeneralPostForm = observer(
     ({
-        formTitle,
-        titleDefaultValue,
-        contentDefaultValue,
+        formTitle = "Заголовок формы",
+        titleDefaultValue = "",
+        contentDefaultValue = "",
         inputTitleRef,
         inputContentRef,
         LeftButton,
         RightButton,
     }) => {
-        titleDefaultValue = titleDefaultValue || "";
-        contentDefaultValue = contentDefaultValue || "";
-
         const handleSubmit = (e) => {
             e.preventDefault();
         };
