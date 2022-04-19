@@ -32,6 +32,7 @@ const PostPage = observer(() => {
 
     const handleDeleteButtonClick = () => {
         const result = confirm("Удалить запись?");
+
         if (result) {
             postsStore.delete(post);
             navigate("/", { replace: true });

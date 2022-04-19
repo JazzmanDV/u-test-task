@@ -7,7 +7,9 @@ const Post = observer(({ post }) => {
     return (
         <div className={styles.post}>
             <h3 className={styles.title}>{post.title}</h3>
-            <p className={styles.content}>{post.content}</p>
+            <div className={styles.contentWrapper}>
+                <p className={styles.content}>{post.content}</p>
+            </div>
         </div>
     );
 });

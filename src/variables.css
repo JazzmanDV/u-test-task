@@ -1,6 +1,6 @@
 :root {
     --primary-color: #4cc9f0;
     --secondary-color: #4895ef;
-    --border-radius: 10px;
+    --border-radius: 0.25rem;
     --transition-duration: 0.5s;
 }
