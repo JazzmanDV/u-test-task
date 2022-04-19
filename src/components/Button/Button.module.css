@@ -9,7 +9,7 @@
     background-color: #d8e8fc;
 
     border: 1px solid #a2b0c0;
-    border-radius: var(--border-radius);
+    border-radius: 0.25rem;
 
     cursor: pointer;
 }

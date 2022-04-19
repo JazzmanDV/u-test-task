@@ -18,11 +18,7 @@ export default defineConfig({
     },
     css: {
         postcss: {
-            plugins: [
-                postcssPresetEnv({
-                    importFrom: "./src/variables.css",
-                }),
-            ],
+            plugins: [postcssPresetEnv()],
         },
         modules: {
             localsConvention: "dashesOnly",
