@@ -2,13 +2,13 @@ import React, { useRef } from "react";
 import { observer } from "mobx-react-lite";
 import { useParams, Link, Navigate, useNavigate } from "react-router-dom";
 
-import styles from "./PostPage.module.css";
-
 import postsStore from "../../store/postsStore.js";
 import Button from "../../components/Button/Button";
 import GeneralPostForm from "../../components/GeneralPostForm/GeneralPostForm";
 
-const PostPage = observer(() => {
+import styles from "./EditPostPage.module.css";
+
+const EditPostPage = observer(() => {
     const navigate = useNavigate();
 
     let { postId } = useParams();
@@ -71,4 +71,4 @@ const PostPage = observer(() => {
     );
 });
 
-export default PostPage;
+export default EditPostPage;

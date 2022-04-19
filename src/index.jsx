@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate, Outlet } from "react-router-dom
 
 import MainPage from "./pages/MainPage/MainPage";
 import PostsPage from "./pages/PostsPage/PostsPage";
-import PostPage from "./pages/PostPage/PostPage";
+import EditPostPage from "./pages/EditPostPage/EditPostPage";
 import AddNewPostPage from "./pages/AddNewPostPage/AddNewPostPage";
 
 ReactDOM.render(
@@ -16,8 +16,11 @@ ReactDOM.render(
                     <Route path="*" element={<Navigate to="posts" replace={true} />} />
                     <Route path="posts">
                         <Route index element={<PostsPage />} />
-                        <Route path=":postId" element={<PostPage />} />
-                        <Route path="add-new-post" element={<AddNewPostPage />} />
+                        <Route path="edit">
+                            <Route index element={<Navigate to="posts" replace={true} />} />
+                            <Route path=":postId" element={<EditPostPage />} />
+                        </Route>
+                        <Route path="add" element={<AddNewPostPage />} />
                     </Route>
                 </Route>
             </Routes>
