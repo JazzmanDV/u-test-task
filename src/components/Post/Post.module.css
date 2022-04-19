@@ -1,0 +1,19 @@
+.post {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.title {
+    text-align: center;
+    margin: 0;
+}
+
+.content {
+    margin: 0;
+    padding: 2rem 4rem;
+
+    background-color: white;
+    border: 1px solid black;
+}

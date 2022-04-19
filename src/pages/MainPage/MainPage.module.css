@@ -1,0 +1,44 @@
+@import url(./variables.css);
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+.main-page {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+
+    min-width: 100vw;
+    min-height: 100vh;
+
+    padding: 3rem 1rem;
+
+    background-color: #f5f5f5;
+}
+
+.content-wrapper {
+    max-width: 60rem;
+    margin: auto;
+}
