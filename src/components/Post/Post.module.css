@@ -3,16 +3,30 @@
     align-items: stretch;
     flex-direction: column;
     gap: 0.5rem;
+
+    width: 12rem;
 }
 
 .title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
     text-align: center;
+
     margin: 0;
 }
 
 .content {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    text-align: center;
+    vertical-align: middle;
+
     margin: 0;
-    padding: 2rem 4rem;
+    padding: 2rem 2rem;
 
     background-color: white;
     border: 1px solid black;
