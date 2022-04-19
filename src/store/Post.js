@@ -6,7 +6,7 @@ class Post {
     id = "0";
     title = "mock title";
     content = "mock content";
-
+    
     constructor(title, content) {
         makeAutoObservable(this);
 

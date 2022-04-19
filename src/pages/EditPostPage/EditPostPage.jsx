@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { observer } from "mobx-react-lite";
-import { useParams, Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 
 import postsStore from "../../store/postsStore.js";
 import Button from "../../components/Button/Button";
