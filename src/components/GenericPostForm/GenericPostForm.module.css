@@ -20,3 +20,7 @@
     flex-wrap: wrap;
     gap: 1rem;
 }
+
+.buttons-wrapper > *:only-child {
+    margin-left: auto;
+}
