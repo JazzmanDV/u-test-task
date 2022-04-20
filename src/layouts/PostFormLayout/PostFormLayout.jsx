@@ -8,7 +8,7 @@ import styles from "./PostFormLayout.module.css";
 const PostFormLayout = () => {
     return (
         <div className={styles.postFormLayout}>
-            <Link to="/posts">
+            <Link to=".">
                 <Button>Назад</Button>
             </Link>
             <Outlet />

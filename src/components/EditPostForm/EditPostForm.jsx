@@ -17,7 +17,7 @@ const EditPostForm = observer(({ post }) => {
 
         if (result) {
             postsStore.delete(post);
-            navigate("/posts", { replace: true });
+            navigate("..", { replace: true });
         }
     };
 
@@ -30,7 +30,7 @@ const EditPostForm = observer(({ post }) => {
         }
 
         postsStore.update(post, title, content);
-        navigate("/posts", { replace: true });
+        navigate("..", { replace: true });
     };
 
     const LeftButton = () => (
