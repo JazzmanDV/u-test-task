@@ -6,13 +6,18 @@ class Post {
     id = "0";
     title = "mock title";
     content = "mock content";
-    
+
     constructor(title, content) {
         makeAutoObservable(this);
 
         this.id = postsCounter;
         postsCounter++;
 
+        this.title = title;
+        this.content = content;
+    }
+
+    update(title, content) {
         this.title = title;
         this.content = content;
     }

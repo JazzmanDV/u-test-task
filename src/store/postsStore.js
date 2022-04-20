@@ -16,8 +16,7 @@ class PostsStore {
     }
 
     update(post, title, content) {
-        post.title = title;
-        post.content = content;
+        post.update(title, content);
     }
 
     delete(postToDelete) {
