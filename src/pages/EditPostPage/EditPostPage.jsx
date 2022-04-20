@@ -56,7 +56,7 @@ const EditPostPage = observer(() => {
 
     return post ? (
         <div className={styles.postPage}>
-            <Link to={"/"}>
+            <Link to="/">
                 <Button>Назад</Button>
             </Link>
             <GeneralPostForm

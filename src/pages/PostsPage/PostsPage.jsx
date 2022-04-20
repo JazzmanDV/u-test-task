@@ -23,7 +23,7 @@ const PostsPage = observer(() => {
     return (
         <div className={styles.postsPage}>
             <h2 className={styles.title}>Блог</h2>
-            <Link to={"add"}>
+            <Link to="add">
                 <Button>+ Добавить</Button>
             </Link>
             <ul className={styles.postsList}>{mappedPosts}</ul>

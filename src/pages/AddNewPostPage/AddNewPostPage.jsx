@@ -13,7 +13,7 @@ const AddNewPostPage = observer(() => {
     const inputContentRef = useRef(null);
 
     const LeftButton = () => (
-        <Link to={"/"}>
+        <Link to="/">
             <Button>Отмена</Button>
         </Link>
     );
