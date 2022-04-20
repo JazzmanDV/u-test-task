@@ -18,21 +18,6 @@ const EditPostPage = observer(() => {
     const inputTitleRef = useRef(null);
     const inputContentRef = useRef(null);
 
-    const LeftButton = () => (
-        <Button
-            style={{ backgroundColor: "#f7cecc", borderColor: "#a47879" }}
-            onClick={handleDeleteButtonClick}
-        >
-            Удалить
-        </Button>
-    );
-
-    const RightButton = () => (
-        <Button type="submit" onClick={handleSaveButtonClick}>
-            Сохранить
-        </Button>
-    );
-
     const handleDeleteButtonClick = () => {
         const result = confirm("Удалить запись?");
 
@@ -53,6 +38,21 @@ const EditPostPage = observer(() => {
         postsStore.update(post, title, content);
         navigate("/", { replace: true });
     };
+
+    const LeftButton = () => (
+        <Button
+            style={{ backgroundColor: "#f7cecc", borderColor: "#a47879" }}
+            onClick={handleDeleteButtonClick}
+        >
+            Удалить
+        </Button>
+    );
+
+    const RightButton = () => (
+        <Button type="submit" onClick={handleSaveButtonClick}>
+            Сохранить
+        </Button>
+    );
 
     return post ? (
         <div className={styles.editPostPage}>

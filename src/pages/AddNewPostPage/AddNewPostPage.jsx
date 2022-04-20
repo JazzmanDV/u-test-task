@@ -12,18 +12,6 @@ const AddNewPostPage = observer(() => {
     const inputTitleRef = useRef(null);
     const inputContentRef = useRef(null);
 
-    const LeftButton = () => (
-        <Link to="/">
-            <Button>Отмена</Button>
-        </Link>
-    );
-
-    const RightButton = () => (
-        <Button type="submit" onClick={handleAddButtonClick}>
-            Добавить
-        </Button>
-    );
-
     const handleAddButtonClick = () => {
         const title = inputTitleRef.current.value.trim();
         const content = inputContentRef.current.value.trim();
@@ -35,6 +23,18 @@ const AddNewPostPage = observer(() => {
         postsStore.add(title, content);
         navigate("/", { replace: true });
     };
+
+    const LeftButton = () => (
+        <Link to="/">
+            <Button>Отмена</Button>
+        </Link>
+    );
+
+    const RightButton = () => (
+        <Button type="submit" onClick={handleAddButtonClick}>
+            Добавить
+        </Button>
+    );
 
     return (
         <GeneralPostForm
