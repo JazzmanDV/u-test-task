@@ -1,10 +1,10 @@
 import Post from "./Post.js";
 
-const NUM_OF_MOCK_POSTS = 5;
+const NUMBER_OF_MOCK_POSTS = 7;
 
 const mockPosts = [];
 
-for (let i = 1; i <= NUM_OF_MOCK_POSTS; i++) {
+for (let i = 1; i <= NUMBER_OF_MOCK_POSTS; i++) {
     mockPosts.push(new Post(`Title ${i}`, `Content ${i}`));
 }
 

@@ -1,6 +1,6 @@
 import { makeAutoObservable } from "mobx";
 
-let postsCounter = 1;
+let currentId = 1;
 
 class Post {
     id = "0";
@@ -10,8 +10,8 @@ class Post {
     constructor(title, content) {
         makeAutoObservable(this);
 
-        this.id = postsCounter;
-        postsCounter++;
+        this.id = currentId;
+        currentId++;
 
         this.title = title;
         this.content = content;

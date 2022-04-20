@@ -4,7 +4,7 @@ import Post from "./Post.js";
 import mockPosts from "./mockPosts.js";
 
 class PostsStore {
-    posts = null;
+    posts = [];
 
     constructor(posts) {
         makeAutoObservable(this);
