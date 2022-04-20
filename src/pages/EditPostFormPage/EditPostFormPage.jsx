@@ -10,7 +10,7 @@ const EditPostFormPage = observer(() => {
     postId = Number(postId);
     const post = postsStore.posts.find((post) => post.id === postId);
 
-    return post ? <EditPostForm post={post} /> : <Navigate to="posts" replace={true} />;
+    return post ? <EditPostForm post={post} /> : <Navigate to="/posts" replace={true} />;
 });
 
 export default EditPostFormPage;

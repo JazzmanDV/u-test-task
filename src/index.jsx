@@ -13,12 +13,13 @@ ReactDOM.render(
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<AppLayout />}>
+                    <Route index element={<Navigate to="/posts" replace={true} />} />
                     <Route path="posts" element={<PostsPage />} />
                     <Route path="posts" element={<PostFormLayout />}>
                         <Route path="add" element={<AddNewPostFormPage />} />
                         <Route path="edit/:postId" element={<EditPostFormPage />} />
                     </Route>
-                    <Route path="*" element={<Navigate to="posts" replace={true} />} />
+                    <Route path="*" element={<Navigate to="/posts" replace={true} />} />
                 </Route>
             </Routes>
         </BrowserRouter>
