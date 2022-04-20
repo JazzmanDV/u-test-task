@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { observer } from "mobx-react-lite";
 import { useNavigate } from "react-router-dom";
 
+import sanitizeTextInputRef from "../../utils/sanitizeTextInputRef";
 import postsStore from "../../store/postsStore.js";
 import Button from "../../components/Button/Button";
 import GenericPostForm from "../GenericPostForm/GenericPostForm";
@@ -13,8 +14,8 @@ const AddNewPostForm = observer(() => {
     const contentInputRef = useRef(null);
 
     const handleAddButtonClick = () => {
-        const title = titleInputRef.current.value.trim();
-        const content = contentInputRef.current.value.trim();
+        const title = sanitizeTextInputRef(titleInputRef);
+        const content = sanitizeTextInputRef(contentInputRef);
 
         if (!title || !content) {
             return;
