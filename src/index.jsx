@@ -12,7 +12,7 @@ ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<AppLayout />}>
+                <Route element={<AppLayout />}>
                     <Route index element={<Navigate to="posts" replace={true} />} />
                     <Route path="posts" element={<PostsPage />} />
                     <Route path="posts" element={<PostFormLayout />}>
