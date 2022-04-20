@@ -9,8 +9,8 @@ import GenericPostForm from "../GenericPostForm/GenericPostForm";
 const EditPostForm = observer(({ post }) => {
     const navigate = useNavigate();
 
-    const inputTitleRef = useRef(null);
-    const inputContentRef = useRef(null);
+    const titleInputRef = useRef(null);
+    const contentInputRef = useRef(null);
 
     const handleDeleteButtonClick = () => {
         const result = confirm("Удалить запись?");
@@ -22,8 +22,8 @@ const EditPostForm = observer(({ post }) => {
     };
 
     const handleSaveButtonClick = () => {
-        const title = inputTitleRef.current.value.trim();
-        const content = inputContentRef.current.value.trim();
+        const title = titleInputRef.current.value.trim();
+        const content = contentInputRef.current.value.trim();
 
         if (!title || !content) {
             return;
@@ -51,10 +51,10 @@ const EditPostForm = observer(({ post }) => {
     return (
         <GenericPostForm
             formTitle={`Запись "${post.title}"`}
-            titleDefaultValue={post.title}
-            contentDefaultValue={post.content}
-            inputTitleRef={inputTitleRef}
-            inputContentRef={inputContentRef}
+            titleInputDefaultValue={post.title}
+            contentInputDefaultValue={post.content}
+            titleInputRef={titleInputRef}
+            contentInputRef={contentInputRef}
             LeftButton={LeftButton}
             RightButton={RightButton}
         />

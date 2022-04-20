@@ -9,12 +9,12 @@ import GenericPostForm from "../GenericPostForm/GenericPostForm";
 const AddNewPostForm = observer(() => {
     const navigate = useNavigate();
 
-    const inputTitleRef = useRef(null);
-    const inputContentRef = useRef(null);
+    const titleInputRef = useRef(null);
+    const contentInputRef = useRef(null);
 
     const handleAddButtonClick = () => {
-        const title = inputTitleRef.current.value.trim();
-        const content = inputContentRef.current.value.trim();
+        const title = titleInputRef.current.value.trim();
+        const content = contentInputRef.current.value.trim();
 
         if (!title || !content) {
             return;
@@ -39,8 +39,8 @@ const AddNewPostForm = observer(() => {
     return (
         <GenericPostForm
             formTitle={"Добавление новой записи"}
-            inputTitleRef={inputTitleRef}
-            inputContentRef={inputContentRef}
+            titleInputRef={titleInputRef}
+            contentInputRef={contentInputRef}
             LeftButton={LeftButton}
             RightButton={RightButton}
         />

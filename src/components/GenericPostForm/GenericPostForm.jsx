@@ -6,10 +6,10 @@ import styles from "./GenericPostForm.module.css";
 const GenericPostForm = observer(
     ({
         formTitle = "Заголовок формы",
-        titleDefaultValue = "",
-        contentDefaultValue = "",
-        inputTitleRef,
-        inputContentRef,
+        titleInputDefaultValue = "",
+        contentInputDefaultValue = "",
+        titleInputRef = null,
+        contentInputRef = null,
         LeftButton,
         RightButton,
     }) => {
@@ -18,26 +18,26 @@ const GenericPostForm = observer(
         };
 
         return (
-            <div className={styles.postForm}>
+            <div className={styles.formWrapper}>
                 <h3 className={styles.title}>{formTitle}</h3>
                 <form className={styles.form} onSubmit={handleSubmit}>
                     <input
                         type="text"
                         placeholder="Введите заголовок"
-                        defaultValue={titleDefaultValue}
+                        defaultValue={titleInputDefaultValue}
                         required
-                        ref={inputTitleRef}
+                        ref={titleInputRef}
                     />
                     <textarea
                         placeholder="Введите текст"
-                        defaultValue={contentDefaultValue}
+                        defaultValue={contentInputDefaultValue}
                         rows={10}
                         required
-                        ref={inputContentRef}
+                        ref={contentInputRef}
                     ></textarea>
                     <div className={styles.buttonsWrapper}>
-                        <LeftButton />
-                        <RightButton />
+                        {LeftButton && <LeftButton />}
+                        {RightButton && <RightButton />}
                     </div>
                 </form>
             </div>
