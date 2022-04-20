@@ -1,4 +1,4 @@
-.posts-page {
+.postsPage {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -24,8 +24,4 @@
     gap: 0.5rem;
 
     list-style-type: none;
-}
-
-.button {
-    width: 100%;
 }

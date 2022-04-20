@@ -19,7 +19,10 @@ const EditPostPage = observer(() => {
     const inputContentRef = useRef(null);
 
     const LeftButton = () => (
-        <Button className={styles.buttonRed} onClick={handleDeleteButtonClick}>
+        <Button
+            style={{ backgroundColor: "#f7cecc", borderColor: "#a47879" }}
+            onClick={handleDeleteButtonClick}
+        >
             Удалить
         </Button>
     );

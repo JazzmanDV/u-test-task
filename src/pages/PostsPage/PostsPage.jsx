@@ -15,7 +15,7 @@ const PostsPage = observer(() => {
         <li className={styles.postsListItem} key={post.id}>
             <Post post={post} />
             <Link to={`edit/${post.id}`}>
-                <Button className={styles.button}>перейти</Button>
+                <Button style={{ width: "100%" }}>перейти</Button>
             </Link>
         </li>
     ));
@@ -24,7 +24,7 @@ const PostsPage = observer(() => {
         <div className={styles.postsPage}>
             <h2 className={styles.title}>Блог</h2>
             <Link to={"add"}>
-                <Button className={styles.button}>+ Добавить</Button>
+                <Button>+ Добавить</Button>
             </Link>
             <ul className={styles.postsList}>{mappedPosts}</ul>
         </div>

@@ -3,8 +3,3 @@
     flex-direction: column;
     gap: 2rem;
 }
-
-.button-red {
-    background-color: #f7cecc;
-    border-color: #a47879;
-}
