@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import postsStore from "../../store/postsStore.js";
 import Button from "../../components/Button/Button";
-import GeneralPostForm from "../../components/GeneralPostForm/GeneralPostForm";
+import GenericPostForm from "../GenericPostForm/GenericPostForm";
 
 const AddNewPostForm = observer(() => {
     const navigate = useNavigate();
@@ -37,7 +37,7 @@ const AddNewPostForm = observer(() => {
     );
 
     return (
-        <GeneralPostForm
+        <GenericPostForm
             formTitle={"Добавление новой записи"}
             inputTitleRef={inputTitleRef}
             inputContentRef={inputContentRef}

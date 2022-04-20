@@ -1,9 +1,9 @@
 import React from "react";
 import { observer } from "mobx-react-lite";
 
-import styles from "./GeneralPostForm.module.css";
+import styles from "./GenericPostForm.module.css";
 
-const GeneralPostForm = observer(
+const GenericPostForm = observer(
     ({
         formTitle = "Заголовок формы",
         titleDefaultValue = "",
@@ -44,4 +44,4 @@ const GeneralPostForm = observer(
         );
     }
 );
-export default GeneralPostForm;
+export default GenericPostForm;

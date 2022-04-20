@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import postsStore from "../../store/postsStore.js";
 import Button from "../../components/Button/Button";
-import GeneralPostForm from "../../components/GeneralPostForm/GeneralPostForm";
+import GenericPostForm from "../GenericPostForm/GenericPostForm";
 
 const EditPostForm = observer(({ post }) => {
     const navigate = useNavigate();
@@ -49,7 +49,7 @@ const EditPostForm = observer(({ post }) => {
     );
 
     return (
-        <GeneralPostForm
+        <GenericPostForm
             formTitle={`Запись "${post.title}"`}
             titleDefaultValue={post.title}
             contentDefaultValue={post.content}
