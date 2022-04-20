@@ -21,7 +21,7 @@ const AddNewPostForm = observer(() => {
         }
 
         postsStore.add(title, content);
-        navigate("..", { replace: true });
+        navigate("/posts", { replace: true });
     };
 
     const RightButton = () => (
