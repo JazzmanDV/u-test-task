@@ -1,9 +1,9 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
-import styles from "./MainPage.module.css";
+import styles from "./App.module.css";
 
-const MainPage = () => {
+const App = () => {
     return (
         <main className={styles.mainPage}>
             <div className={styles.contentWrapper}>
@@ -13,4 +13,4 @@ const MainPage = () => {
     );
 };
 
-export default MainPage;
+export default App;
