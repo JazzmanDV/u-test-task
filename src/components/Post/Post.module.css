@@ -30,6 +30,7 @@
     -webkit-line-clamp: 2;
 
     white-space: break-spaces;
+    word-break: break-all;
 
     text-align: center;
 
