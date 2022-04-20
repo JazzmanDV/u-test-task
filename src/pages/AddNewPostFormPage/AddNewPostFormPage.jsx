@@ -2,8 +2,8 @@ import React from "react";
 
 import AddNewPostForm from "../../components/AddNewPostForm/AddNewPostForm";
 
-const AddNewPostPage = () => {
+const AddNewPostFormPage = () => {
     return <AddNewPostForm />;
 };
 
-export default AddNewPostPage;
+export default AddNewPostFormPage;
