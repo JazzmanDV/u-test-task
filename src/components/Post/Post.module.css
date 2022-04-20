@@ -1,6 +1,5 @@
 .post {
     display: flex;
-    align-items: stretch;
     flex-direction: column;
     gap: 0.5rem;
 
@@ -9,8 +8,8 @@
 
 .title {
     overflow: hidden;
-    white-space: nowrap;
     text-overflow: ellipsis;
+    white-space: nowrap;
 
     text-align: center;
 
@@ -25,8 +24,8 @@
 }
 
 .content {
-    overflow: hidden;
     display: -webkit-box;
+    overflow: hidden;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 
