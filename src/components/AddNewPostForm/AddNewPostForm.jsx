@@ -25,7 +25,7 @@ const AddNewPostForm = observer(() => {
     };
 
     const LeftButton = () => (
-        <Link to="posts">
+        <Link to="/posts">
             <Button>Отмена</Button>
         </Link>
     );
