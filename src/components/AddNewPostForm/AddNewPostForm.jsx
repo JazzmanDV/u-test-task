@@ -21,11 +21,11 @@ const AddNewPostForm = observer(() => {
         }
 
         postsStore.add(title, content);
-        navigate("/", { replace: true });
+        navigate("posts", { replace: true });
     };
 
     const LeftButton = () => (
-        <Link to="/">
+        <Link to="posts">
             <Button>Отмена</Button>
         </Link>
     );
