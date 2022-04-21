@@ -1,8 +1,8 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import { observer } from "mobx-react-lite";
 import { useNavigate } from "react-router-dom";
 
-import sanitizeTextInputRef from "../../utils/sanitizeTextInputRef";
+import sanitizeTextInputState from "../../utils/sanitizeTextInputState";
 import postsStore from "../../store/postsStore.js";
 import Button from "../../components/Button/Button";
 import GenericPostForm from "../GenericPostForm/GenericPostForm";
@@ -10,12 +10,12 @@ import GenericPostForm from "../GenericPostForm/GenericPostForm";
 const AddNewPostForm = observer(() => {
     const navigate = useNavigate();
 
-    const titleInputRef = useRef(null);
-    const contentInputRef = useRef(null);
+    const [titleInputState, setTitleInputState] = useState("");
+    const [contentInputState, setContentInputState] = useState("");
 
     const handleAddButtonClick = () => {
-        const title = sanitizeTextInputRef(titleInputRef);
-        const content = sanitizeTextInputRef(contentInputRef);
+        const title = sanitizeTextInputState(titleInputState, setTitleInputState);
+        const content = sanitizeTextInputState(contentInputState, setContentInputState);
 
         if (!title || !content) {
             return;
@@ -25,7 +25,7 @@ const AddNewPostForm = observer(() => {
         navigate("/posts", { replace: true });
     };
 
-    const RightButton = () => (
+    const AddButton = () => (
         <Button type="submit" onClick={handleAddButtonClick}>
             Добавить
         </Button>
@@ -34,9 +34,11 @@ const AddNewPostForm = observer(() => {
     return (
         <GenericPostForm
             formTitle={"Добавление новой записи"}
-            titleInputRef={titleInputRef}
-            contentInputRef={contentInputRef}
-            RightButton={RightButton}
+            titleInputState={titleInputState}
+            contentInputState={contentInputState}
+            setTitleInputState={setTitleInputState}
+            setContentInputState={setContentInputState}
+            RightButton={AddButton}
         />
     );
 });

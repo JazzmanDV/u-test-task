@@ -1,8 +1,8 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import { observer } from "mobx-react-lite";
 import { useNavigate } from "react-router-dom";
 
-import sanitizeTextInputRef from "../../utils/sanitizeTextInputRef";
+import sanitizeTextInputState from "../../utils/sanitizeTextInputState";
 import postsStore from "../../store/postsStore.js";
 import Button from "../../components/Button/Button";
 import GenericPostForm from "../GenericPostForm/GenericPostForm";
@@ -10,8 +10,8 @@ import GenericPostForm from "../GenericPostForm/GenericPostForm";
 const EditPostForm = observer(({ post }) => {
     const navigate = useNavigate();
 
-    const titleInputRef = useRef(null);
-    const contentInputRef = useRef(null);
+    const [titleInputState, setTitleInputState] = useState(post.title);
+    const [contentInputState, setContentInputState] = useState(post.content);
 
     const handleDeleteButtonClick = () => {
         const result = confirm("Удалить запись?");
@@ -23,8 +23,8 @@ const EditPostForm = observer(({ post }) => {
     };
 
     const handleSaveButtonClick = () => {
-        const title = sanitizeTextInputRef(titleInputRef);
-        const content = sanitizeTextInputRef(contentInputRef);
+        const title = sanitizeTextInputState(titleInputState, setTitleInputState);
+        const content = sanitizeTextInputState(contentInputState, setContentInputState);
 
         if (!title || !content) {
             return;
@@ -34,7 +34,7 @@ const EditPostForm = observer(({ post }) => {
         navigate("/posts", { replace: true });
     };
 
-    const LeftButton = () => (
+    const DeleteButton = () => (
         <Button
             style={{ backgroundColor: "#f7cecc", borderColor: "#a47879" }}
             onClick={handleDeleteButtonClick}
@@ -43,7 +43,7 @@ const EditPostForm = observer(({ post }) => {
         </Button>
     );
 
-    const RightButton = () => (
+    const SaveButton = () => (
         <Button type="submit" onClick={handleSaveButtonClick}>
             Сохранить
         </Button>
@@ -52,12 +52,12 @@ const EditPostForm = observer(({ post }) => {
     return (
         <GenericPostForm
             formTitle={`Запись "${post.title}"`}
-            titleInputDefaultValue={post.title}
-            contentInputDefaultValue={post.content}
-            titleInputRef={titleInputRef}
-            contentInputRef={contentInputRef}
-            LeftButton={LeftButton}
-            RightButton={RightButton}
+            titleInputState={titleInputState}
+            contentInputState={contentInputState}
+            setTitleInputState={setTitleInputState}
+            setContentInputState={setContentInputState}
+            LeftButton={DeleteButton}
+            RightButton={SaveButton}
         />
     );
 });

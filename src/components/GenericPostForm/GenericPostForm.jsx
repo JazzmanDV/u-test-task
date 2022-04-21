@@ -6,15 +6,23 @@ import styles from "./GenericPostForm.module.css";
 const GenericPostForm = observer(
     ({
         formTitle = "Заголовок формы",
-        titleInputDefaultValue = "",
-        contentInputDefaultValue = "",
-        titleInputRef = null,
-        contentInputRef = null,
+        titleInputState,
+        contentInputState,
+        setTitleInputState,
+        setContentInputState,
         LeftButton,
         RightButton,
     }) => {
         const handleSubmit = (e) => {
             e.preventDefault();
+        };
+
+        const onTitleInputChange = (e) => {
+            setTitleInputState(e.target.value);
+        };
+
+        const onContentInputChange = (e) => {
+            setContentInputState(e.target.value);
         };
 
         return (
@@ -24,16 +32,16 @@ const GenericPostForm = observer(
                     <input
                         type="text"
                         placeholder="Введите заголовок"
-                        defaultValue={titleInputDefaultValue}
                         required
-                        ref={titleInputRef}
+                        value={titleInputState}
+                        onChange={onTitleInputChange}
                     />
                     <textarea
                         placeholder="Введите текст"
-                        defaultValue={contentInputDefaultValue}
                         rows={10}
                         required
-                        ref={contentInputRef}
+                        value={contentInputState}
+                        onChange={onContentInputChange}
                     ></textarea>
                     <div className={styles.buttonsWrapper}>
                         {LeftButton && <LeftButton />}
